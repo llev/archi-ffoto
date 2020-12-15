@@ -1,0 +1,145 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  background-color: #000000;
+  color: #ffffff;
+}
+
+h1, h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+}
+
+
+h1 span, h2 span {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+h1 span {
+  width: 300px;
+}
+
+h2 span {
+  width: 400px;
+}
+header h1, header h2 {
+  display: flex;
+}
+
+
+header {
+  position: fixed;
+  top: 8px;
+  left: 0px;
+  font-size: 16px;
+  width: 100%;
+  overflow: hidden;
+  z-index: 100000001;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  grid-auto-flow: dense;
+}
+
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.split:first-child {
+  background-color: #111111; 
+} 
+
+.slides {
+  width: 500px;
+  height: 975px;
+  position: relative;
+}
+
+.slides img {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 500px;
+ height: 975px; 
+ box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+.info {
+  max-width: 580px;
+  padding: 32px;
+}
+
+.info h2 {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+section p {
+  margin: 32px 0 0 0;
+}
+
+section a {
+  background: #ffffff;
+  color: #111111;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 24px;
+  border-radius: 55px;
+  display: inline-flex;
+  align-items: center;
+}
+
+section a img {
+  margin-left: 10px;
+  width: 10px;
+  height: 16px;
+  object-fit: cover;
+  object-position: center right;
+  transition: all 250ms ease;
+}
+
+section a:hover img {
+  width: 25px;
+}
+
+.alt-layout div.split:first-child {
+  grid-column: 2;
+}
+
+.alt-layout div.split:last-child {
+  grid-column: 1;
+}
+
+@media (max-width: 1080px) {
+  section {
+    display: block;
+  }
+  
+  section div.split {
+    padding: 64px 0 64px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  section div.slides, 
+  section div.slides img {
+    width: 80vw;
+    height: 120vw;
+    object-fit: contain;
+    box-shadow: none;
+  }
+}
+
+
